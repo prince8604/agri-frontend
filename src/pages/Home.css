@@ -1,0 +1,225 @@
+/* src/pages/Home.css */
+
+.home-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* --- SECTION 1: CAROUSEL --- */
+.carousel-section {
+    margin-bottom: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+/* --- SECTION 2: CARDS --- */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2E7D32;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-btn {
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card-btn:hover {
+    background-color: #1b5e20;
+}
+
+/* --- NEW SECTION: VIDEO PLATFORM (Quadrants) --- */
+.platform-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    margin-bottom: 50px;
+    /* Space before cards */
+}
+
+.platform-header p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.quadrant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Columns */
+    gap: 20px;
+    max-width: 800px;
+    margin: 30px auto 0;
+    position: relative;
+    /* Needed for center circle positioning */
+}
+
+.quad-box {
+    position: relative;
+    border: 4px solid #7ab800;
+    /* Light Green Border */
+    border-radius: 15px;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quad-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    /* Darken image so text is readable */
+    transition: transform 0.3s;
+}
+
+.quad-box:hover img {
+    transform: scale(1.05);
+    /* Zoom effect on hover */
+}
+
+.quad-box h3 {
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    margin: 0;
+}
+
+/* THE CENTER CIRCLE BUTTON */
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers it perfectly */
+    width: 160px;
+    height: 160px;
+    background: white;
+    border: 6px solid #7ab800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.center-circle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Grow effect */
+    background-color: #f0fdf4;
+}
+
+.circle-content {
+    text-align: center;
+    color: #2E7D32;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.circle-content h3 {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+.circle-content .icon {
+    font-size: 1.5rem;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .slide-content {
+        height: 250px;
+    }
+
+    .slide-text {
+        width: 90%;
+        bottom: 10px;
+        padding: 10px;
+    }
+
+    /* Stack quadrants on very small screens if needed, 
+       but 2x2 usually works on mobile too. 
+       We just shrink the circle slightly. */
+    .center-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .circle-content h3 {
+        font-size: 1rem;
+    }
+
+    .quad-box h3 {
+        font-size: 1.2rem;
+    }
+}   

@@ -1,0 +1,116 @@
+/* src/components/Header.css */
+
+/* --- 1. Top Bar Styles (The Dark Strip) --- */
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-bar {
+    background-color: #333;
+    /* Dark Grey */
+    color: #ccc;
+    padding: 8px 20px;
+    /* Small padding */
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+.language-options span {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.auth-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.auth-links a:hover {
+    color: white;
+}
+
+/* --- 2. Main Header Styles (The Green Bar) --- */
+.header {
+    background-color: #2E7D32;
+    /* THE GREEN COLOR */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    /* Pushes Logo left, Nav right */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+    /* If image is missing, this ensures alt text doesn't break layout */
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    /* Spacing between links */
+}
+
+.nav-link {
+    color: white !important;
+    /* Forces text to be white */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+    /* Slight fade on hover */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}

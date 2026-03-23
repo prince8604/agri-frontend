@@ -1,0 +1,119 @@
+/* src/components/SearchSection.css */
+.search-section-container {
+    background-color: #7ab800;
+    /* The specific green from your image */
+    padding: 40px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    /* Space below this section */
+}
+
+.search-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+/* Center Text & Form */
+.center-content {
+    text-align: center;
+    color: white;
+    flex: 2;
+    /* Takes up more space than images */
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.sub-heading {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* Form Styling */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    /* Centers the form */
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    /* Inputs take equal width */
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-btn {
+    flex: 1;
+    background-color: #0056b3;
+    /* Dark Blue button */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #004494;
+}
+
+/* Side Images */
+.side-image-container {
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+}
+
+.side-image {
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    /* Makes the left logo round if square */
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+    .search-content-wrapper {
+        flex-direction: column;
+        /* Stack everything vertically */
+        text-align: center;
+    }
+
+    .side-image-container {
+        margin-bottom: 20px;
+    }
+
+    .side-image {
+        max-width: 100px;
+        /* Smaller images on mobile */
+    }
+
+    .main-heading {
+        font-size: 1.8rem;
+    }
+}
