@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // 2. Import Search Section
-import SearchSection from '../components/TempSection';
+import SearchSection from '../components/SearchSection';
 
 // 3. IMPORT LOCAL IMAGES HERE
 // This path matches your screenshot perfectly
