@@ -1,7 +1,7 @@
 // src/components/SearchSection.jsx
 import React, { useState } from 'react';
 import './searchSection.css';
-import fasalVardan from '../assets/Images/fasal-vardan1.jpg';
+import fasalVardan from "../assets/Images/fasal-Vardan1.jpg";
 import fasalZyme from '../assets/Images/fasal-zyme.jpg';
 import fasalSamrat from '../assets/Images/fasal-samrat.jpg';
 import fasalHindsulf from '../assets/Images/fasal-hindsulf.jpg';
