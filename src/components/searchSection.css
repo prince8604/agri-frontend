@@ -1,88 +1,71 @@
-/* src/components/SearchSection.css */
-.search-section-container {
-    background-color: #7ab800;
-    /* The specific green from your image */
-    padding: 40px 20px;
+/* src/components/searchSection.css */
+
+.catalog-section-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
-    /* Space below this section */
+    margin-bottom: 50px;
 }
 
-.search-content-wrapper {
+/* --- BANNER STYLES --- */
+.catalog-banner {
+    background: linear-gradient(135deg, #006400 0%, #7ab800 100%);
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    gap: 20px;
+    max-width: 1100px;
+    gap: 30px;
 }
 
-/* Center Text & Form */
 .center-content {
     text-align: center;
     color: white;
     flex: 2;
-    /* Takes up more space than images */
 }
 
 .main-heading {
     font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: normal;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .sub-heading {
     font-size: 1.1rem;
-    margin-bottom: 25px;
-    line-height: 1.4;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    opacity: 0.95;
 }
 
-/* Form Styling */
-.search-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-    /* Centers the form */
-}
-
-.form-row {
-    display: flex;
-    gap: 10px;
-}
-
-.search-input {
-    flex: 1;
-    /* Inputs take equal width */
-    padding: 10px;
+.toggle-catalog-btn {
+    background-color: white;
+    color: #006400;
     border: none;
-    border-radius: 2px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.search-btn {
-    flex: 1;
-    background-color: #0056b3;
-    /* Dark Blue button */
-    color: white;
-    border: none;
-    padding: 10px;
+    padding: 14px 35px;
+    font-size: 1.1rem;
     font-weight: bold;
+    border-radius: 30px;
     cursor: pointer;
-    border-radius: 2px;
-    transition: background 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-.search-btn:hover {
-    background-color: #004494;
+.toggle-catalog-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: #f0fdf4;
 }
 
-/* Side Images */
 .side-image-container {
     flex: 0.5;
     display: flex;
@@ -90,30 +73,198 @@
 }
 
 .side-image {
-    max-width: 150px;
+    max-width: 100px;
     height: auto;
-    border-radius: 50%;
-    /* Makes the left logo round if square */
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
 }
 
-/* Responsive Design (Mobile) */
+/* --- EXPANDED CATALOG STYLES --- */
+.expanded-catalog-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    padding: 40px 20px 0;
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Category Filters */
+.category-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    background: white;
+    color: #555;
+    border: 2px solid #ddd;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #7ab800;
+    color: #7ab800;
+}
+
+.filter-btn.active {
+    background: #7ab800;
+    color: white;
+    border-color: #7ab800;
+    box-shadow: 0 4px 10px rgba(122, 184, 0, 0.3);
+}
+
+/* Product Grid */
+.expanded-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-img-box {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensures the whole packet is visible */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-box img {
+    transform: scale(1.05);
+}
+
+.category-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #FF9800;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.product-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title-hi {
+    color: #d32f2f;
+    /* Red color matching your catalog text */
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+}
+
+.product-title-en {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-comp {
+    color: #1565c0;
+    /* Blue color for chemical composition */
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.product-desc {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.packing-info {
+    font-weight: bold;
+    color: #2E7D32;
+    font-size: 0.9rem;
+}
+
+.buy-btn {
+    background: #2E7D32;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buy-btn:hover {
+    background: #1b5e20;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .search-content-wrapper {
+    .catalog-content-wrapper {
         flex-direction: column;
-        /* Stack everything vertically */
-        text-align: center;
     }
 
     .side-image-container {
-        margin-bottom: 20px;
-    }
-
-    .side-image {
-        max-width: 100px;
-        /* Smaller images on mobile */
+        display: none;
     }
 
     .main-heading {
         font-size: 1.8rem;
     }
-}
+}   
